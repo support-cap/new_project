@@ -305,10 +305,10 @@
                </div>
                <br><br>
                <b> A/P 1. <input type="text" value="<?php echo attr($check_res["ap1"]); ?>" name="ap1" id="ap1" style="width:85%;"><br>
-               &emsp;&emsp;&nbsp;&nbsp;2. <input type="text" value="<?php echo attr($check_res["ap2"]); ?>" name="ap2" id="ap2" style="width:85%;"><br>
-               &emsp;&emsp;&nbsp;&nbsp;3. <input type="text" value="<?php echo attr($check_res["ap3"]); ?>" name="ap3" id="ap3" style="width:85%;"><br>
-               &emsp;&emsp;&nbsp;&nbsp;4. <input type="text" value="<?php echo attr($check_res["ap4"]); ?>" name="ap4" id="ap4" style="width:85%;"><br>
-               &emsp;&emsp;&nbsp;&nbsp;s. <input type="text" value="<?php echo attr($check_res["ap5"]); ?>" name="ap5" id="ap5" style="width:85%;">
+               &emsp;&emsp;&nbsp;&nbsp; 2. <input type="text" value="<?php echo attr($check_res["ap2"]); ?>" name="ap2" id="ap2" style="width:85%;"><br>
+               &emsp;&emsp;&nbsp;&nbsp; 3. <input type="text" value="<?php echo attr($check_res["ap3"]); ?>" name="ap3" id="ap3" style="width:85%;"><br>
+               &emsp;&emsp;&nbsp;&nbsp; 4. <input type="text" value="<?php echo attr($check_res["ap4"]); ?>" name="ap4" id="ap4" style="width:85%;"><br>
+               &emsp;&emsp;&nbsp;&nbsp; 5. <input type="text" value="<?php echo attr($check_res["ap5"]); ?>" name="ap5" id="ap5" style="width:85%;">
 
                </b>
           </div>
@@ -342,7 +342,7 @@
                </b>
            </div>
         </div>
-        <div class="btndiv" style="vertical-align:center">
+        <div class="btndiv" style="margin-left: 500px;margin-top:25px;">
           <input type="submit" name="sub" value="Submit" class="subbtn">
           <button class="cancel" type="button"  onclick="top.restoreSession(); parent.closeTab(window.name, false);"><?php echo xlt('Cancel');?></button>
         </div>

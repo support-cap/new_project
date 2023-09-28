@@ -75,6 +75,8 @@ $n_Babinski= $_POST['n_Babinski']?1:0;
 $p_Babinski= $_POST['p_Babinski']?1:0;
 $n_Coordination= $_POST['n_Coordination']?1:0;
 $nb_Coordination= $_POST['nb_Coordination']?1:0;
+$ub_Coordination= $_POST['ub_Coordination']?1:0;
+$lp_Coordination= $_POST['lp_Coordination']?1:0;
 $u_Coordination= $_POST['u_Coordination']?1:0;
 $l_Coordination= $_POST['l_Coordination']?1:0;
 $n_Facet= $_POST['n_Facet']?1:0;
@@ -97,9 +99,9 @@ $Ankle_left1= $_POST['Ankle_left1'];
 $Ankle_left2= $_POST['Ankle_left2'];
 $Ankle_left3= $_POST['Ankle_left3'];
 $Ankle_left4= $_POST['Ankle_left4'];
-$hip_check= $_POST['hip_check'];
-$knee_check= $_POST['knee_check'];
-$shoulder_check= $_POST['shoulder_check'];
+$hip_check= $_POST['hip_check']?1:0;
+$knee_check= $_POST['knee_check']?1:0;
+$shoulder_check= $_POST['shoulder_check']?1:0;
 $sign1= $_POST['sign1'];
 $sign2= $_POST['sign2'];
 $check1= $_POST['check1']?1:0;
@@ -192,6 +194,8 @@ n_Babinski= ?,
 p_Babinski= ?,
 n_Coordination= ?,
 nb_Coordination= ?,
+ub_Coordination= ?,
+lp_Coordination= ?,
 u_Coordination= ?,
 l_Coordination= ?,
 n_Facet= ?,
@@ -244,11 +248,11 @@ pat_label= ?" ;
 $id = (int) (isset($_GET['id']) ? $_GET['id'] : '');
 if ($id && $id != 0) {
     sqlStatement("UPDATE `form_deuk_spine_Cervical` SET  " . $sets ." WHERE id = $id",
-    [$pid,$encounter,$dos, $room_no, $ins_num, $ma_ins, $last_visit, $cc, $hx,$shx, $Worst, $Average, $Best, $neck, $uep, $bp1, $bp2, $hrs, $right1, $right2, $right3, $right4, $right5, $right6, $right7, $right8, $right9, $right10, $left1, $left2, $left3, $left4, $left5, $left6, $left7, $left8, $left9, $left10, $right_s1, $right_s2, $right_s3, $right_s4, $right_s5, $right_s6, $right_s7, $right_s8, $right_s9, $right_s10, $left_s1, $left_s2, $left_s3, $left_s4, $left_s5, $left_s6, $left_s7, $left_s8, $left_s9, $left_s10, $n_Clonus, $p_Clonus, $n_Hoffman, $p_Hoffman, $n_Rhomberg, $p_Rhomberg, $n_Babinski, $p_Babinski, $n_Coordination, $nb_Coordination, $u_Coordination, $l_Coordination, $n_Facet, $p_Facet, $n_shoulder, $p_shoulder, $n_Spurlings, $p_Spurlings, $n_Tinnels, $p_Tinnels, $w_Tinnels, $e_Tinnels, $n_Muscle, $p_Muscle, $Patella_right1, $Patella_right2, $Patella_right3, $Patella_right4, $Ankle_left1, $Ankle_left2, $Ankle_left3, $Ankle_left4, $hip_check, $knee_check, $shoulder_check, $sign1, $sign2, $check1, $check2, $check3, $check4, $check5, $check6, $check7, $check8, $check9, $check10, $check11, $check12, $check13, $check14, $check15, $check16, $ap1, $ap2, $ap3, $ap4, $ap5, $pat_label]);
+    [$pid,$encounter,$dos, $room_no, $ins_num, $ma_ins, $last_visit, $cc, $hx,$shx, $Worst, $Average, $Best, $neck, $uep, $bp1, $bp2, $hrs, $right1, $right2, $right3, $right4, $right5, $right6, $right7, $right8, $right9, $right10, $left1, $left2, $left3, $left4, $left5, $left6, $left7, $left8, $left9, $left10, $right_s1, $right_s2, $right_s3, $right_s4, $right_s5, $right_s6, $right_s7, $right_s8, $right_s9, $right_s10, $left_s1, $left_s2, $left_s3, $left_s4, $left_s5, $left_s6, $left_s7, $left_s8, $left_s9, $left_s10, $n_Clonus, $p_Clonus, $n_Hoffman, $p_Hoffman, $n_Rhomberg, $p_Rhomberg, $n_Babinski, $p_Babinski, $n_Coordination, $nb_Coordination, $ub_Coordination,$lp_Coordination,$u_Coordination, $l_Coordination, $n_Facet, $p_Facet, $n_shoulder, $p_shoulder, $n_Spurlings, $p_Spurlings, $n_Tinnels, $p_Tinnels, $w_Tinnels, $e_Tinnels, $n_Muscle, $p_Muscle, $Patella_right1, $Patella_right2, $Patella_right3, $Patella_right4, $Ankle_left1, $Ankle_left2, $Ankle_left3, $Ankle_left4, $hip_check, $knee_check, $shoulder_check, $sign1, $sign2, $check1, $check2, $check3, $check4, $check5, $check6, $check7, $check8, $check9, $check10, $check11, $check12, $check13, $check14, $check15, $check16, $ap1, $ap2, $ap3, $ap4, $ap5, $pat_label]);
 }else 
 {
      $newid = sqlInsert ("INSERT INTO `form_deuk_spine_Cervical` SET " . $sets,
-     [$pid,$encounter,$dos, $room_no, $ins_num, $ma_ins, $last_visit, $cc, $hx, $shx, $Worst, $Average, $Best, $neck, $uep, $bp1, $bp2, $hrs, $right1, $right2, $right3, $right4, $right5, $right6, $right7, $right8, $right9, $right10, $left1, $left2, $left3, $left4, $left5, $left6, $left7, $left8, $left9, $left10, $right_s1, $right_s2, $right_s3, $right_s4, $right_s5, $right_s6, $right_s7, $right_s8, $right_s9, $right_s10, $left_s1, $left_s2, $left_s3, $left_s4, $left_s5, $left_s6, $left_s7, $left_s8, $left_s9, $left_s10, $n_Clonus, $p_Clonus, $n_Hoffman, $p_Hoffman, $n_Rhomberg, $p_Rhomberg, $n_Babinski, $p_Babinski, $n_Coordination, $nb_Coordination, $u_Coordination, $l_Coordination, $n_Facet, $p_Facet, $n_shoulder, $p_shoulder, $n_Spurlings, $p_Spurlings, $n_Tinnels, $p_Tinnels, $w_Tinnels, $e_Tinnels, $n_Muscle, $p_Muscle, $Patella_right1, $Patella_right2, $Patella_right3, $Patella_right4, $Ankle_left1, $Ankle_left2, $Ankle_left3, $Ankle_left4, $hip_check, $knee_check, $shoulder_check, $sign1, $sign2, $check1, $check2, $check3, $check4, $check5, $check6, $check7, $check8, $check9, $check10, $check11, $check12, $check13, $check14, $check15, $check16, $ap1, $ap2, $ap3, $ap4, $ap5, $pat_label]);
+     [$pid,$encounter,$dos, $room_no, $ins_num, $ma_ins, $last_visit, $cc, $hx, $shx, $Worst, $Average, $Best, $neck, $uep, $bp1, $bp2, $hrs, $right1, $right2, $right3, $right4, $right5, $right6, $right7, $right8, $right9, $right10, $left1, $left2, $left3, $left4, $left5, $left6, $left7, $left8, $left9, $left10, $right_s1, $right_s2, $right_s3, $right_s4, $right_s5, $right_s6, $right_s7, $right_s8, $right_s9, $right_s10, $left_s1, $left_s2, $left_s3, $left_s4, $left_s5, $left_s6, $left_s7, $left_s8, $left_s9, $left_s10, $n_Clonus, $p_Clonus, $n_Hoffman, $p_Hoffman, $n_Rhomberg, $p_Rhomberg, $n_Babinski, $p_Babinski, $n_Coordination, $nb_Coordination,$ub_Coordination,$lp_Coordination, $u_Coordination, $l_Coordination, $n_Facet, $p_Facet, $n_shoulder, $p_shoulder, $n_Spurlings, $p_Spurlings, $n_Tinnels, $p_Tinnels, $w_Tinnels, $e_Tinnels, $n_Muscle, $p_Muscle, $Patella_right1, $Patella_right2, $Patella_right3, $Patella_right4, $Ankle_left1, $Ankle_left2, $Ankle_left3, $Ankle_left4, $hip_check, $knee_check, $shoulder_check, $sign1, $sign2, $check1, $check2, $check3, $check4, $check5, $check6, $check7, $check8, $check9, $check10, $check11, $check12, $check13, $check14, $check15, $check16, $ap1, $ap2, $ap3, $ap4, $ap5, $pat_label]);
 
     addForm($encounter, "Deuk Spine_Cervical", $newid, "form_deuk_spine_Cervical",  $_SESSION["pid"], $userauthorized);
 }

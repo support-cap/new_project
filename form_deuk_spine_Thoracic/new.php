@@ -252,17 +252,17 @@
                                    </tr>
                                    <tr>
                                         <td>Right</td>
-                                        <td style="padding: 5px;"><input type="text" style="width:45px;" name="Patella_right1" id="Patella_right1"></td>
-                                        <td style="padding: 5px;"><input type="text" style="width:45px;" name="Patella_right2" id="Patella_right2"></td>
-                                        <td style="padding: 5px;"><input type="text" style="width:45px;" name="Patella_right3" id="Patella_right3"></td>
-                                        <td style="padding: 5px;"><input type="text" style="width:45px;" name="Patella_right4" id="Patella_right4"></td>
+                                        <td style="padding: 5px;"><input type="text" style="width:45px;"  value="<?php echo attr($check_res["Patella_right1"]); ?>" name="Patella_right1" id="Patella_right1"></td>
+                                        <td style="padding: 5px;"><input type="text" style="width:45px;"  value="<?php echo attr($check_res["Patella_right2"]); ?>" name="Patella_right2" id="Patella_right2"></td>
+                                        <td style="padding: 5px;"><input type="text" style="width:45px;"  value="<?php echo attr($check_res["Patella_right3"]); ?>" name="Patella_right3" id="Patella_right3"></td>
+                                        <td style="padding: 5px;"><input type="text" style="width:45px;"  value="<?php echo attr($check_res["Patella_right4"]); ?>" name="Patella_right4" id="Patella_right4"></td>
                                    </tr>
                                    <tr>
                                         <td>Left</td>
-                                        <td style="padding: 5px;"><input type="text" style="width:45px;" name="Ankle_left1" id="Ankle_left1"></td>
-                                        <td style="padding: 5px;"><input type="text" style="width:45px;" name="Ankle_left2" id="Ankle_left2"></td>
-                                        <td style="padding: 5px;"><input type="text" style="width:45px;" name="Ankle_left3" id="Ankle_left3"></td>
-                                        <td style="padding: 5px;"><input type="text" style="width:45px;" name="Ankle_left4" id="Ankle_left4"></td>
+                                        <td style="padding: 5px;"><input type="text" style="width:45px;" value="<?php echo attr($check_res["Ankle_left1"]); ?>" name="Ankle_left1" id="Ankle_left1"></td>
+                                        <td style="padding: 5px;"><input type="text" style="width:45px;" value="<?php echo attr($check_res["Ankle_left2"]); ?>" name="Ankle_left2" id="Ankle_left2"></td>
+                                        <td style="padding: 5px;"><input type="text" style="width:45px;" value="<?php echo attr($check_res["Ankle_left3"]); ?>" name="Ankle_left3" id="Ankle_left3"></td>
+                                        <td style="padding: 5px;"><input type="text" style="width:45px;" value="<?php echo attr($check_res["Ankle_left4"]); ?>" name="Ankle_left4" id="Ankle_left4"></td>
                                    </tr>
                               </table><br>
                               <div style="font-size: 12px;border:1px solid black;padding: 7px;">

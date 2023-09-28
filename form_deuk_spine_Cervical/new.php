@@ -188,29 +188,29 @@
                          </tr>
                          <tr>
                               <td style="padding: 5px;">Right</td>
-                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["ap2"]); ?>" name="right_s1" id="right_s1" style="width:25px"></td>
-                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["ap2"]); ?>" name="right_s2" id="right_s2" style="width:25px"></td>
-                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["ap2"]); ?>" name="right_s3" id="right_s3" style="width:25px"></td>
-                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["ap2"]); ?>" name="right_s4" id="right_s4" style="width:25px"></td>
-                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["ap2"]); ?>" name="right_s5" id="right_s5" style="width:25px"></td>
-                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["ap2"]); ?>" name="right_s6" id="right_s6" style="width:25px"></td>
-                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["ap2"]); ?>" name="right_s7" id="right_s7" style="width:25px"></td>
-                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["ap2"]); ?>" name="right_s8" id="right_s8" style="width:25px"></td>
-                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["ap2"]); ?>" name="right_s9" id="right_s9" style="width:25px"></td>
-                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["ap2"]); ?>" name="right_s10" id="right_s10" style="width:25px"></td>
+                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["right_s1"]); ?>" name="right_s1" id="right_s1" style="width:25px"></td>
+                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["right_s2"]); ?>" name="right_s2" id="right_s2" style="width:25px"></td>
+                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["right_s3"]); ?>" name="right_s3" id="right_s3" style="width:25px"></td>
+                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["right_s4"]); ?>" name="right_s4" id="right_s4" style="width:25px"></td>
+                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["right_s5"]); ?>" name="right_s5" id="right_s5" style="width:25px"></td>
+                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["right_s6"]); ?>" name="right_s6" id="right_s6" style="width:25px"></td>
+                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["right_s7"]); ?>" name="right_s7" id="right_s7" style="width:25px"></td>
+                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["right_s8"]); ?>" name="right_s8" id="right_s8" style="width:25px"></td>
+                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["right_s9"]); ?>" name="right_s9" id="right_s9" style="width:25px"></td>
+                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["right_s10"]); ?>" name="right_s10" id="right_s10" style="width:25px"></td>
                          </tr>
                          <tr>
                               <td style="padding: 5px;">Left</td>
-                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["ap2"]); ?>" name="left_s1" id="left_s1" style="width:25px"></td>
-                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["ap2"]); ?>" name="left_s2" id="left_s2" style="width:25px"></td>
-                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["ap2"]); ?>" name="left_s3" id="left_s3" style="width:25px"></td>
-                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["ap2"]); ?>" name="left_s4" id="left_s4" style="width:25px"></td>
-                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["ap2"]); ?>" name="left_s5" id="left_s5" style="width:25px"></td>
-                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["ap2"]); ?>" name="left_s6" id="left_s6" style="width:25px"></td>
-                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["ap2"]); ?>" name="left_s7" id="left_s7" style="width:25px"></td>
-                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["ap2"]); ?>" name="left_s8" id="left_s8" style="width:25px"></td>
-                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["ap2"]); ?>" name="left_s9" id="left_s9" style="width:25px"></td>
-                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["ap2"]); ?>" name="left_s10" id="left_s10" style="width:25px"></td>
+                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["left_s1"]); ?>" name="left_s1" id="left_s1" style="width:25px"></td>
+                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["left_s2"]); ?>" name="left_s2" id="left_s2" style="width:25px"></td>
+                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["left_s3"]); ?>" name="left_s3" id="left_s3" style="width:25px"></td>
+                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["left_s4"]); ?>" name="left_s4" id="left_s4" style="width:25px"></td>
+                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["left_s5"]); ?>" name="left_s5" id="left_s5" style="width:25px"></td>
+                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["left_s6"]); ?>" name="left_s6" id="left_s6" style="width:25px"></td>
+                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["left_s7"]); ?>" name="left_s7" id="left_s7" style="width:25px"></td>
+                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["left_s8"]); ?>" name="left_s8" id="left_s8" style="width:25px"></td>
+                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["left_s9"]); ?>" name="left_s9" id="left_s9" style="width:25px"></td>
+                              <td style="padding: 5px;"><input type="text" value="<?php echo attr($check_res["left_s10"]); ?>" name="left_s10" id="left_s10" style="width:25px"></td>
                          </tr>
                     </table>
                </div>
@@ -262,9 +262,9 @@
                          </div>
                          <div class='col-6'>
                               <div  style="border:1px solid black;padding:5px 10px;">
-                                   <input type="checkbox" <?php echo ($check_res["hip_check"] == 1) ? "checked" : ""; ?>id="hip_check" name= "hip_check" > Hip pain: R &ensp; L &ensp;B <br>
-                                   <input type="checkbox" <?php echo ($check_res["knee_check"] == 1) ? "checked" : ""; ?>id="knee_check" name= "knee_check"> Knee pain: R &ensp; L &ensp; B <br>
-                                   <input type="checkbox" <?php echo ($check_res["shoulder_check"] == 1) ? "checked" : ""; ?>id="shoulder_check" name= "shoulder_check"> Shoulder: R &ensp; L &ensp; B
+                                   <input type="checkbox" <?php echo ($check_res["hip_check"] == 1) ? "checked" : ""; ?> id="hip_check" name= "hip_check" > Hip pain: R &ensp; L &ensp;B <br>
+                                   <input type="checkbox" <?php echo ($check_res["knee_check"] == 1) ? "checked" : ""; ?> id="knee_check" name= "knee_check"> Knee pain: R &ensp; L &ensp; B <br>
+                                   <input type="checkbox" <?php echo ($check_res["shoulder_check"] == 1) ? "checked" : ""; ?> id="shoulder_check" name= "shoulder_check"> Shoulder: R &ensp; L &ensp; B
                               </div>
                          </div>
                     </div><br>
