@@ -88,6 +88,7 @@
         <h6 align="center"> Lumbar</h6>
         <div class="row">
           <div class="col-4">
+               <input type="hidden" name="pos" id="pos" value="<?php echo attr($check_res["pos"]); ?>" >
                  <label style="border: 1px solid;padding:2px"> pain: X Numbness :O Weekness : /pins & needles: * </label>      
           </div>
           <div class="col-3">DOS <input type="date" value="<?php echo attr($check_res["dos"]); ?>" name="dos" id="dos"></div>
@@ -100,7 +101,7 @@
         <br>
         <div class="row">
           <div class="col-5" align="center">
-               <img src="../../forms/form_deuk_spine/deuk.png" alt="form_deuk_spine" style="width:80%">
+               <img src="../../forms/form_deuk_spine/deuk.png" alt="form_deuk_spine" style="width:80%;cursor:pointer">
           </div>
           <div class="col-6">
                Last Visit: <input type="date" value="<?php echo attr($check_res["last_visit"]); ?>" name="last_visit" id="last_visit" style="width:80%"><br>
@@ -130,7 +131,7 @@
                                         <td style="padding: 5px;">L3</td>
                                         <td style="padding: 5px;">L4</td>
                                         <td style="padding: 5px;">LS</td>
-                                        <td style="padding: 5px;">51</td>
+                                        <td style="padding: 5px;">S1</td>
                                    </tr>
                                    <tr>
                                         <td style="padding: 5px;">Right</td>
@@ -158,7 +159,7 @@
                                         <td style="padding: 5px;">L3</td>
                                         <td style="padding: 5px;">L4</td>
                                         <td style="padding: 5px;">LS</td>
-                                        <td style="padding: 5px;">51</td>
+                                        <td style="padding: 5px;">S1</td>
                                    </tr>
                                    <tr>
                                         <td style="padding: 5px;">Right</td>
@@ -196,34 +197,80 @@
           <div class="title">Hamstring:</div>
           <input type="checkbox" <?php echo ($check_res["normal_hamstring"] == 1) ? "checked" : ""; ?> name="normal_hamstring" id="normal_hamstring" class="common_class">Normal
           &emsp;&emsp;&emsp;&emsp;
-          <input type="checkbox" <?php echo ($check_res["contracture_hamstring"] == 1) ? "checked" : ""; ?> name="contracture_hamstring" id="contracture_hamstring" class="common_class">Contracture&emsp;&emsp;&emsp;&emsp; L/R/B<br>
+          <input type="checkbox" <?php echo ($check_res["contracture_hamstring"] == 1) ? "checked" : ""; ?> name="contracture_hamstring" id="contracture_hamstring" class="common_class">Contracture&emsp;&emsp;&emsp;&emsp; 
+          <select name="check2" id="check2" value = '<?php echo attr($check_res["check2"])? $check_res["check2"] : ""; ?>' >
+               <option value="L" <?php echo attr($check_res["check2"] == 'L') ? "selected" : ""; ?> >L</option>
+               <option value="R" <?php echo attr($check_res["check2"] == 'R') ? "selected" : ""; ?> >R</option>
+               <option value="B" <?php echo attr($check_res["check2"] == 'B') ? "selected" : ""; ?> >B</option>
+          </select><br>
 
           <div class="title">Ischial Tuberosity:</div>
           <input type="checkbox" <?php echo ($check_res["normal_ischial"] == 1) ? "checked" : ""; ?> name="normal_ischial" id="normal_ischial" class="common_class">normal &emsp;&emsp;&emsp;&emsp;
           <input type="checkbox" <?php echo ($check_res["tend_ischial"] == 1) ? "checked" : ""; ?> name="tend_ischial" class="tend_ischial" id="tend_ischial" class="common_class">
-          tenderness &emsp;&emsp;&emsp;&emsp;  L/R/B<br>
+          tenderness &emsp;&emsp;&emsp;&emsp;  
+          <select name="check3" id="check3" value = '<?php echo attr($check_res["check3"])? $check_res["check3"] : ""; ?>' >
+               <option value="L" <?php echo attr($check_res["check3"] == 'L') ? "selected" : ""; ?> >L</option>
+               <option value="R" <?php echo attr($check_res["check3"] == 'R') ? "selected" : ""; ?> >R</option>
+               <option value="B" <?php echo attr($check_res["check3"] == 'B') ? "selected" : ""; ?> >B</option>
+          </select><br>
           <div class="title">ITB:</div>
           <input type="checkbox" <?php echo ($check_res["normal_itb"] == 1) ? "checked" : ""; ?> name="normal_itb" id="normal_itb" class="common_class">normal&emsp;&emsp;&emsp;&emsp; 
-          <input type="checkbox" <?php echo ($check_res["tend_itb"] == 1) ? "checked" : ""; ?> name="tend_itb" class="common_class" id="tend_itb"> tenderness  L/R/B<br>
+          <input type="checkbox" <?php echo ($check_res["tend_itb"] == 1) ? "checked" : ""; ?> name="tend_itb" class="common_class" id="tend_itb"> tenderness  &emsp;&emsp;&emsp;&emsp;
+          <select name="check4" id="check4" value = '<?php echo attr($check_res["check4"])? $check_res["check4"] : ""; ?>' >
+               <option value="L" <?php echo attr($check_res["check4"] == 'L') ? "selected" : ""; ?> >L</option>
+               <option value="R" <?php echo attr($check_res["check4"] == 'R') ? "selected" : ""; ?> >R</option>
+               <option value="B" <?php echo attr($check_res["check4"] == 'B') ? "selected" : ""; ?> >B</option>
+          </select><br>
           <div class="title">Straight leg raise:</div>
           <input type="checkbox" <?php echo ($check_res["normal_leg"] == 1) ? "checked" : ""; ?> name="normal_leg" id="normal_leg" class="common_class">normal &emsp;&emsp;&emsp;&emsp;
-          <input type="checkbox" <?php echo ($check_res["positive_leg"] == 1) ? "checked" : ""; ?> name="positive_leg" class="common_class" id="positive_leg" > positive  L/R/B<br>
-          <div class="title">Piriformise:</div><input type="checkbox" <?php echo ($check_res["normal_piriformise"] == 1) ? "checked" : ""; ?> name="normal_piriformise" id="normal_piriformise" class="common_class">normal &emsp;&emsp;&emsp;&emsp; <input type="checkbox" <?php echo ($check_res["tend_piriformise"] == 1) ? "checked" : ""; ?> name="tend_piriformise" id="tend_piriformise" class="common_class"> tenderness  L/R/B<br>
+          <input type="checkbox" <?php echo ($check_res["positive_leg"] == 1) ? "checked" : ""; ?> name="positive_leg" class="common_class" id="positive_leg" > positive  &emsp;&emsp;&emsp;&emsp;
+
+          <select name="check5" id="check5" value = '<?php echo attr($check_res["check5"])? $check_res["check5"] : ""; ?>' >
+               <option value="L" <?php echo attr($check_res["check5"] == 'L') ? "selected" : ""; ?> >L</option>
+               <option value="R" <?php echo attr($check_res["check5"] == 'R') ? "selected" : ""; ?> >R</option>
+               <option value="B" <?php echo attr($check_res["check5"] == 'B') ? "selected" : ""; ?> >B</option>
+          </select><br>
+          <div class="title">Piriformise:</div><input type="checkbox" <?php echo ($check_res["normal_piriformise"] == 1) ? "checked" : ""; ?> name="normal_piriformise" id="normal_piriformise" class="common_class">normal &emsp;&emsp;&emsp;&emsp; <input type="checkbox" <?php echo ($check_res["tend_piriformise"] == 1) ? "checked" : ""; ?> name="tend_piriformise" id="tend_piriformise" class="common_class"> tenderness  &emsp;&emsp;&emsp;&emsp;
+          <select name="check6" id="check6" value = '<?php echo attr($check_res["check6"])? $check_res["check6"] : ""; ?>' >
+               <option value="L" <?php echo attr($check_res["check6"] == 'L') ? "selected" : ""; ?> >L</option>
+               <option value="R" <?php echo attr($check_res["check6"] == 'R') ? "selected" : ""; ?> >R</option>
+               <option value="B" <?php echo attr($check_res["check6"] == 'B') ? "selected" : ""; ?> >B</option>
+          </select><br>
           <div class="title">Pulses:</div>
           <input type="checkbox" <?php echo ($check_res["normal_pulse"] == 1) ? "checked" : ""; ?> name="normal_pulse" id="normal_pulse" class="common_class">normal&emsp;&emsp;&emsp;&emsp; 
-          <input type="checkbox" <?php echo ($check_res["tend_pulse"] == 1) ? "checked" : ""; ?> name="tend_pulse" class="common_class" id="tend_pulse" class="common_class">tenderness &emsp;&emsp;&emsp;&emsp; L/R/B<br>
+          <input type="checkbox" <?php echo ($check_res["tend_pulse"] == 1) ? "checked" : ""; ?> name="tend_pulse" class="common_class" id="tend_pulse" class="common_class">tenderness &emsp;&emsp;&emsp;&emsp; 
+          <select name="check7" id="check7" value = '<?php echo attr($check_res["check7"])? $check_res["check7"] : ""; ?>' >
+               <option value="L" <?php echo attr($check_res["check7"] == 'L') ? "selected" : ""; ?> >L</option>
+               <option value="R" <?php echo attr($check_res["check7"] == 'R') ? "selected" : ""; ?> >R</option>
+               <option value="B" <?php echo attr($check_res["check7"] == 'B') ? "selected" : ""; ?> >B</option>
+          </select><br>
           <div class="title">Trochanter:</div>
           <input type="checkbox" <?php echo ($check_res["normal_troch"] == 1) ? "checked" : ""; ?> name="normal_troch" id="normal_troch" class="common_class">normal&emsp;&emsp;&emsp;&emsp;
-          <input type="checkbox" <?php echo ($check_res["tend_troch"] == 1) ? "checked" : ""; ?> name="tend_troch" class="common_class" id="tend_troch" class="common_class">tenderness &emsp;&emsp;&emsp;&emsp; L/R/B<br>
+          <input type="checkbox" <?php echo ($check_res["tend_troch"] == 1) ? "checked" : ""; ?> name="tend_troch" class="common_class" id="tend_troch" class="common_class">tenderness &emsp;&emsp;&emsp;&emsp; 
+          <select name="check8" id="check8" value = '<?php echo attr($check_res["check8"])? $check_res["check8"] : ""; ?>' >
+               <option value="L" <?php echo attr($check_res["check8"] == 'L') ? "selected" : ""; ?> >L</option>
+               <option value="R" <?php echo attr($check_res["check8"] == 'R') ? "selected" : ""; ?> >R</option>
+               <option value="B" <?php echo attr($check_res["check8"] == 'B') ? "selected" : ""; ?> >B</option>
+          </select><br>
           <div class="title">Sl joint:</div>
           <input type="checkbox" <?php echo ($check_res["normal_sl"] == 1) ? "checked" : ""; ?> name="normal_sl" id="normal_sl" class="common_class">normal&emsp;&emsp;&emsp;&emsp;
           <input type="checkbox" <?php echo ($check_res["positive_sl"] == 1) ? "checked" : ""; ?> name="positive_sl" class="common_class" id="positive_sl" class="common_class">positive <br>
           <div class="title">Facet loading:</div>
           <input type="checkbox" <?php echo ($check_res["normal_facet"] == 1) ? "checked" : ""; ?> name="normal_facet" id="normal_facet" class="common_class">normal&emsp;&emsp;&emsp;&emsp;
-          <input type="checkbox" <?php echo ($check_res["positive_facet"] == 1) ? "checked" : ""; ?> name="positive_facet" class="common_class" id="positive_facet" class="common_class">positive&emsp;&emsp;&emsp;&emsp;  L/R/B<br>
+          <input type="checkbox" <?php echo ($check_res["positive_facet"] == 1) ? "checked" : ""; ?> name="positive_facet" class="common_class" id="positive_facet" class="common_class">positive&emsp;&emsp;&emsp;&emsp;  
+          <select name="check9" id="check9" value = '<?php echo attr($check_res["check9"])? $check_res["check9"] : ""; ?>' >
+               <option value="L" <?php echo attr($check_res["check9"] == 'L') ? "selected" : ""; ?> >L</option>
+               <option value="R" <?php echo attr($check_res["check9"] == 'R') ? "selected" : ""; ?> >R</option>
+               <option value="B" <?php echo attr($check_res["check9"] == 'B') ? "selected" : ""; ?> >B</option>
+          </select><br>
           <div class="title">Muscle Spasms:</div>
           <input type="checkbox" <?php echo ($check_res["normal_muscle"] == 1) ? "checked" : ""; ?> name="normal_muscle" id="normal_muscle" class="common_class">normal&emsp;&emsp;&emsp;&emsp;
-          <input type="checkbox" <?php echo ($check_res["positive_muscle"] == 1) ? "checked" : ""; ?> name="positive_muscle" class="common_class" id="positive_muscle" class="common_class">positive &emsp;&emsp;&emsp;&emsp; L/R/B<br>
+          <input type="checkbox" <?php echo ($check_res["positive_muscle"] == 1) ? "checked" : ""; ?> name="positive_muscle" class="common_class" id="positive_muscle" class="common_class">positive &emsp;&emsp;&emsp;&emsp; 
+          <select name="check10" id="check10" value = '<?php echo attr($check_res["check10"])? $check_res["check10"] : ""; ?>' >
+               <option value="L" <?php echo attr($check_res["check10"] == 'L') ? "selected" : ""; ?> >L</option>
+               <option value="R" <?php echo attr($check_res["check10"] == 'R') ? "selected" : ""; ?> >R</option>
+               <option value="B" <?php echo attr($check_res["check10"] == 'B') ? "selected" : ""; ?> >B</option>
+          </select><br>
           
      </div>
      <div class='col-6'>
@@ -250,28 +297,32 @@
                <div class='col-6'>
                     <div style="border:1px solid black;padding: 7px;">
                          <p style="text-decoration: underline;">Discogenic Pain:</p>
-                              <label>L1-2</label>&nbsp;&nbsp;
-                              <label>L2-3</label>&nbsp;&nbsp;
-                              <label>L3-4</label>&nbsp;&nbsp;
-                              <label>L4-5</label>&nbsp;&nbsp;
-                              <label>L5-S1</label>
+                         <select name="check11" id="check11" value = '<?php echo attr($check_res["check11"])? $check_res["check11"] : ""; ?>' >
+                              <option value="L1-2" <?php echo attr($check_res["check11"] == 'L1-2') ? "selected" : ""; ?> >L1-2</option>
+                              <option value="L2-3" <?php echo attr($check_res["check11"] == 'L2-3') ? "selected" : ""; ?> >L2-3</option>
+                              <option value="L3-4" <?php echo attr($check_res["check11"] == 'L3-4') ? "selected" : ""; ?> >L3-4</option>
+                              <option value="L4-5" <?php echo attr($check_res["check11"] == 'L4-5') ? "selected" : ""; ?> >L4-5</option>
+                              <option value="L5-S1" <?php echo attr($check_res["check11"] == 'L5-S1') ? "selected" : ""; ?> >L5-S1</option>
+                         </select> <br>
                          <p style="text-decoration: underline;">Facet Pain:</p>
-                         <table>
-                              <tr>
-                                   <td>R &ensp;</td>
-                                   <td>L1-2 &ensp;</td>
-                                   <td>L2-3 &ensp;</td>
-                                   <td>L3-4 &ensp;</td>
-                                   <td>L4-5 &ensp;</td>
-                                   <td>L5-S1</td>
-                              </tr>
-                              <tr>
-                                   <td>L &ensp;</td>
-                                   <td>L1-2 &ensp;</td>
-                                   <td>L2-3 &ensp;</td>
-                                   <td>L3-4 &ensp;</td>
-                                   <td>L4-5 &ensp;</td>
-                                   <td>L5-S1</td>
+                         
+                              R &ensp;
+                              <select name="check12" id="check12" value = '<?php echo attr($check_res["check12"])? $check_res["check12"] : ""; ?>' >
+                              <option value="L1-2" <?php echo attr($check_res["check12"] == 'L1-2') ? "selected" : ""; ?> >L1-2</option>
+                              <option value="L2-3" <?php echo attr($check_res["check12"] == 'L2-3') ? "selected" : ""; ?> >L2-3</option>
+                              <option value="L3-4" <?php echo attr($check_res["check12"] == 'L3-4') ? "selected" : ""; ?> >L3-4</option>
+                              <option value="L4-5" <?php echo attr($check_res["check12"] == 'L4-5') ? "selected" : ""; ?> >L4-5</option>
+                              <option value="L5-S1" <?php echo attr($check_res["check12"] == 'L5-S1') ? "selected" : ""; ?> >L5-S1</option>
+                              </select> &emsp;&emsp;
+                              
+                                   L &ensp;
+                              <select name="check13" id="check13" value = '<?php echo attr($check_res["check13"])? $check_res["check13"] : ""; ?>' >
+                              <option value="L1-2" <?php echo attr($check_res["check13"] == 'L1-2') ? "selected" : ""; ?> >L1-2</option>
+                              <option value="L2-3" <?php echo attr($check_res["check13"] == 'L2-3') ? "selected" : ""; ?> >L2-3</option>
+                              <option value="L3-4" <?php echo attr($check_res["check13"] == 'L3-4') ? "selected" : ""; ?> >L3-4</option>
+                              <option value="L4-5" <?php echo attr($check_res["check13"] == 'L4-5') ? "selected" : ""; ?> >L4-5</option>
+                              <option value="L5-S1" <?php echo attr($check_res["check13"] == 'L5-S1') ? "selected" : ""; ?> >L5-S1</option>
+                                   </select> <br>
                               </tr>
                          </table>
                     </div>
@@ -280,27 +331,90 @@
           <br>
         
        <div style="border:1px solid black;padding:5px 10px;margin-left: -150px;">
-        <input type="checkbox" <?php echo ($check_res["hip_check"] == 1) ? "checked" : ""; ?> id="hip_check" name= "hip_check" >Hip pain: R &ensp; L &ensp;B &emsp;
-        <input type="checkbox" <?php echo ($check_res["knee_check"] == 1) ? "checked" : ""; ?> id="knee_check" name= "knee_check">Knee pain: R &ensp; L &ensp; B &emsp;
-        <input type="checkbox" <?php echo ($check_res["shoulder_check"] == 1) ? "checked" : ""; ?> id="shoulder_check" name= "shoulder_check">Shoulder: R &ensp; L &ensp; B
+        <input type="checkbox" <?php echo ($check_res["hip_check"] == 1) ? "checked" : ""; ?> id="hip_check" name= "hip_check" >Hip pain: 
+        
+        <select name="check20" id="check20" value = '<?php echo attr($check_res["check20"])? $check_res["check20"] : ""; ?>' >
+               <option value="L" <?php echo attr($check_res["check20"] == 'L') ? "selected" : ""; ?> >L</option>
+               <option value="R" <?php echo attr($check_res["check20"] == 'R') ? "selected" : ""; ?> >R</option>
+               <option value="B" <?php echo attr($check_res["check20"] == 'B') ? "selected" : ""; ?> >B</option>
+          </select>
+
+        &emsp;
+        <input type="checkbox" <?php echo ($check_res["knee_check"] == 1) ? "checked" : ""; ?> id="knee_check" name= "knee_check">Knee pain: 
+        
+        <select name="check21" id="check21" value = '<?php echo attr($check_res["check21"])? $check_res["check21"] : ""; ?>' >
+               <option value="L" <?php echo attr($check_res["check21"] == 'L') ? "selected" : ""; ?> >L</option>
+               <option value="R" <?php echo attr($check_res["check21"] == 'R') ? "selected" : ""; ?> >R</option>
+               <option value="B" <?php echo attr($check_res["check21"] == 'B') ? "selected" : ""; ?> >B</option>
+          </select>
+        &emsp;
+        <input type="checkbox" <?php echo ($check_res["shoulder_check"] == 1) ? "checked" : ""; ?> id="shoulder_check" name= "shoulder_check">Shoulder: 
+        
+        <select name="check22" id="check22" value = '<?php echo attr($check_res["check22"])? $check_res["check22"] : ""; ?>' >
+               <option value="L" <?php echo attr($check_res["check22"] == 'L') ? "selected" : ""; ?> >L</option>
+               <option value="R" <?php echo attr($check_res["check22"] == 'R') ? "selected" : ""; ?> >R</option>
+               <option value="B" <?php echo attr($check_res["check22"] == 'B') ? "selected" : ""; ?> >B</option>
+          </select>
        </div><br>
           </div>
      </div>
 </div>
 
 <br><br>
-        <div class="row">
+        <div class="row" style="padding: 20px;">
           <div class="col-6">
                <div class="" style="border:1px solid;font-weight:bold;padding-left:10px"> 
                     * Surgery Recommendation w/ Dr.Deuk for:<br> DLDR <br>
-                    R &emsp; L1-2  &emsp; L2-3 &emsp; L3-4 &emsp; L4-5 &emsp; L5-S1 <br>
-                    L &emsp; L1-2  &emsp; L2-3 &emsp; L3-4 &emsp; L4-5 &emsp; L5-S1 <br><br>
+                    R &ensp;
+                    <select name="check14" id="check14" value = '<?php echo attr($check_res["check14"])? $check_res["check14"] : ""; ?>' >
+                              <option value="L1-2" <?php echo attr($check_res["check14"] == 'L1-2') ? "selected" : ""; ?> >L1-2</option>
+                              <option value="L2-3" <?php echo attr($check_res["check14"] == 'L2-3') ? "selected" : ""; ?> >L2-3</option>
+                              <option value="L3-4" <?php echo attr($check_res["check14"] == 'L3-4') ? "selected" : ""; ?> >L3-4</option>
+                              <option value="L4-5" <?php echo attr($check_res["check14"] == 'L4-5') ? "selected" : ""; ?> >L4-5</option>
+                              <option value="L5-S1" <?php echo attr($check_res["check14"] == 'L5-S1') ? "selected" : ""; ?> >L5-S1</option>
+                    </select> &emsp;&emsp;&emsp;
+                    L &ensp; 
+                    <select name="check15" id="check15" value = '<?php echo attr($check_res["check15"])? $check_res["check15"] : ""; ?>' >
+                              <option value="L1-2" <?php echo attr($check_res["check15"] == 'L1-2') ? "selected" : ""; ?> >L1-2</option>
+                              <option value="L2-3" <?php echo attr($check_res["check15"] == 'L2-3') ? "selected" : ""; ?> >L2-3</option>
+                              <option value="L3-4" <?php echo attr($check_res["check15"] == 'L3-4') ? "selected" : ""; ?> >L3-4</option>
+                              <option value="L4-5" <?php echo attr($check_res["check15"] == 'L4-5') ? "selected" : ""; ?> >L4-5</option>
+                              <option value="L5-S1" <?php echo attr($check_res["check15"] == 'L5-S1') ? "selected" : ""; ?> >L5-S1</option>
+                    </select> <br> <br>
                     DPR <br>
-                    R &emsp; L1-2  &emsp; L2-3 &emsp; L3-4 &emsp; L4-5 &emsp; L5-S1 <br>
-                    L &emsp; L1-2  &emsp; L2-3 &emsp; L3-4 &emsp; L4-5 &emsp; L5-S1 <br><br>
-                    * LMBB/RFA w/ Dr.Patel or Dr Francischini :<br>
-                    R &emsp; L1-2  &emsp; L2-3 &emsp; L3-4 &emsp; L4-5 &emsp; L5-S1 <br>
-                    L &emsp; L1-2  &emsp; L2-3 &emsp; L3-4 &emsp; L4-5 &emsp; L5-S1 <br><br>
+                    R &ensp; 
+                    <select name="check16" id="check16" value = '<?php echo attr($check_res["check16"])? $check_res["check16"] : ""; ?>' >
+                              <option value="L1-2" <?php echo attr($check_res["check16"] == 'L1-2') ? "selected" : ""; ?> >L1-2</option>
+                              <option value="L2-3" <?php echo attr($check_res["check16"] == 'L2-3') ? "selected" : ""; ?> >L2-3</option>
+                              <option value="L3-4" <?php echo attr($check_res["check16"] == 'L3-4') ? "selected" : ""; ?> >L3-4</option>
+                              <option value="L4-5" <?php echo attr($check_res["check16"] == 'L4-5') ? "selected" : ""; ?> >L4-5</option>
+                              <option value="L5-S1" <?php echo attr($check_res["check16"] == 'L5-S1') ? "selected" : ""; ?> >L5-S1</option>
+                    </select> &emsp;&emsp;&emsp;
+                    L &ensp; 
+                    <select name="check17" id="check17" value = '<?php echo attr($check_res["check17"])? $check_res["check17"] : ""; ?>' >
+                              <option value="L1-2" <?php echo attr($check_res["check17"] == 'L1-2') ? "selected" : ""; ?> >L1-2</option>
+                              <option value="L2-3" <?php echo attr($check_res["check17"] == 'L2-3') ? "selected" : ""; ?> >L2-3</option>
+                              <option value="L3-4" <?php echo attr($check_res["check17"] == 'L3-4') ? "selected" : ""; ?> >L3-4</option>
+                              <option value="L4-5" <?php echo attr($check_res["check17"] == 'L4-5') ? "selected" : ""; ?> >L4-5</option>
+                              <option value="L5-S1" <?php echo attr($check_res["check17"] == 'L5-S1') ? "selected" : ""; ?> >L5-S1</option>
+                    </select> <br> <br>
+                    * LMBB/RFA w/ Dr.Patel or Dr Franceschini :<br>
+                    R &ensp;
+                    <select name="check18" id="check18" value = '<?php echo attr($check_res["check18"])? $check_res["check18"] : ""; ?>' >
+                              <option value="L1-2" <?php echo attr($check_res["check18"] == 'L1-2') ? "selected" : ""; ?> >L1-2</option>
+                              <option value="L2-3" <?php echo attr($check_res["check18"] == 'L2-3') ? "selected" : ""; ?> >L2-3</option>
+                              <option value="L3-4" <?php echo attr($check_res["check18"] == 'L3-4') ? "selected" : ""; ?> >L3-4</option>
+                              <option value="L4-5" <?php echo attr($check_res["check18"] == 'L4-5') ? "selected" : ""; ?> >L4-5</option>
+                              <option value="L5-S1" <?php echo attr($check_res["check18"] == 'L5-S1') ? "selected" : ""; ?> >L5-S1</option>
+                    </select> &emsp;&emsp;&emsp;
+                    L &ensp; 
+                    <select name="check19" id="check19" value = '<?php echo attr($check_res["check19"])? $check_res["check19"] : ""; ?>' >
+                              <option value="L1-2" <?php echo attr($check_res["check19"] == 'L1-2') ? "selected" : ""; ?> >L1-2</option>
+                              <option value="L2-3" <?php echo attr($check_res["check19"] == 'L2-3') ? "selected" : ""; ?> >L2-3</option>
+                              <option value="L3-4" <?php echo attr($check_res["check19"] == 'L3-4') ? "selected" : ""; ?> >L3-4</option>
+                              <option value="L4-5" <?php echo attr($check_res["check19"] == 'L4-5') ? "selected" : ""; ?> >L4-5</option>
+                              <option value="L5-S1" <?php echo attr($check_res["check19"] == 'L5-S1') ? "selected" : ""; ?> >L5-S1</option>
+                    </select> <br> <br>
 
                </div>
                <br><br>
@@ -313,24 +427,25 @@
                </b>
           </div>
           <div class="col-6">
-           <div class="" style="border:1px solid;font-weight:bold;padding-left:10px"> 
-               <input type="checkbox" <?php echo ($check_res["check1"] == 1) ? "checked" : ""; ?> name="check1" id="check1">&ensp; Lumbago with sciatica, Right side (M54.41) <br>
-               <input type="checkbox" <?php echo ($check_res["check2"] == 1) ? "checked" : ""; ?> name="check2" id="check2">&ensp; Lumbago with sciatica, Left side (M54.42)<br>
-               <input type="checkbox" <?php echo ($check_res["check3"] == 1) ? "checked" : ""; ?> name="check3" id="check3">&ensp; Sciatica Right side (M54.31)<br>
-               <input type="checkbox" <?php echo ($check_res["check4"] == 1) ? "checked" : ""; ?> name="check4" id="check4">&ensp; Sciatica Left side (M54.32)<br>
-               <input type="checkbox" <?php echo ($check_res["check5"] == 1) ? "checked" : ""; ?> name="check5" id="check5">&ensp; Radiculopathy I Radiculitis Lumbar (M54.16)<br>
-               <input type="checkbox" <?php echo ($check_res["check6"] == 1) ? "checked" : ""; ?> name="check6" id="check6">&ensp;  Facet Syndrome, Lumbar (M53.86)<br>
-               <input type="checkbox" <?php echo ($check_res["check7"] == 1) ? "checked" : ""; ?> name="check7" id="check7">&ensp;  HNP/ bulge lumbar w/o myelopathy/radiculopathy (M51.26)<br>
-               <input type="checkbox" <?php echo ($check_res["check8"] == 1) ? "checked" : ""; ?> name="check8" id="check8">&ensp;  HNP/disc bulge lumbar w/radiculopathy (M51.16)<br>
-               <input type="checkbox" <?php echo ($check_res["check9"] == 1) ? "checked" : ""; ?> name="check9" id="check9">&ensp;  Sprain/Strain  Lumb subseq encounter (S33.5XXA)<br>
-               <input type="checkbox" <?php echo ($check_res["check10"] == 1) ? "checked" : ""; ?> name="check10" id="check10">&ensp; Knee pain RT (M25.561) LT (M25.562)<br>
-               <input type="checkbox" <?php echo ($check_res["check11"] == 1) ? "checked" : ""; ?> name="check11" id="check11">&ensp; Hip pain	RT (M25.551) ILT (M25.552)<br>
-               <input type="checkbox" <?php echo ($check_res["check12"] == 1) ? "checked" : ""; ?> name="check12" id="check12">&ensp; Trochanteric bursitis   RT (M70.61)  I LT (M70.62)<br>
-               <input type="checkbox" <?php echo ($check_res["check13"] == 1) ? "checked" : ""; ?> name="check13" id="check13">&ensp;  Annular tear Lumbar (M51.86)<br>
-               <input type="checkbox" <?php echo ($check_res["check14"] == 1) ? "checked" : ""; ?> name="check14" id="check14">&ensp; Drop Foot, RT (M21.371) D Drop Foot, LT (M21.372)<br>
-               <input type="checkbox" <?php echo ($check_res["check15"] == 1) ? "checked" : ""; ?> name="check15" id="check15">&ensp;  Hx of check16 Fusion (M43.26)<br>
-               <input type="checkbox" <?php echo ($check_res["check16"] == 1) ? "checked" : ""; ?> name="check16" id="check16">&ensp;  M51.A2 lntervertebral annulus fibrosus, large, lumbar region<br>
-               <input type="checkbox" <?php echo ($check_res["check17"] == 1) ? "checked" : ""; ?> name="check17" id="check17">&ensp; M51.A5 lntervertebral annulus fibrosus defect, large, lumbarsacral region
+           <div style="border:1px solid;font-weight:bold;padding-left:10px"> 
+               <input type="radio" <?php echo ($check_res["check1"] == 1) ? "checked" : ""; ?> name="check1" value="1" id="check1" <?php echo ($check_res["check1"] == 1) ? "checked" : ""; ?> >&ensp; Lumbago with sciatica, Right side (M54.41) <br>
+               <input type="radio"  name="check1" id="check2" value="2" <?php echo ($check_res["check1"] == 2) ? "checked" : ""; ?>>&ensp; Lumbago with sciatica, Left side (M54.42)<br>
+               <input type="radio"  name="check1" id="check3" value="3" <?php echo ($check_res["check1"] == 3) ? "checked" : ""; ?>>&ensp; Sciatica Right side (M54.31)<br>
+               <input type="radio"  name="check1" id="check4" value="4" <?php echo ($check_res["check1"] == 4) ? "checked" : ""; ?>>&ensp; Sciatica Left side (M54.32)<br>
+               <input type="radio"  name="check1" id="check5" value="5" <?php echo ($check_res["check1"] == 5) ? "checked" : ""; ?>>&ensp; Radiculopathy / Radiculitis Lumbar (M54.16)<br>
+               <input type="radio"  name="check1" id="check6" value="6" <?php echo ($check_res["check1"] == 6) ? "checked" : ""; ?>>&ensp;  Facet Syndrome, Lumbar (M53.86)<br>
+               <input type="radio" <?php echo ($check_res["check1"] == 7) ? "checked" : ""; ?> name="check1" id="check7" value="7">&ensp;  HNP/ bulge lumbar w/o myelopathy  / radiculopathy (M51.26)<br>
+               <input type="radio" <?php echo ($check_res["check1"] == 8) ? "checked" : ""; ?> name="check1" value="8" id="check8">&ensp;  HNP/disc bulge lumbar w/radiculopathy (M51.16)<br>
+               <input type="radio" <?php echo ($check_res["check1"] == 9) ? "checked" : ""; ?> name="check1" value="9" id="check9">&ensp;  Sprain/Strain  Lumb subseq encounter (S33.5XXA)<br>
+               <input type="radio" <?php echo ($check_res["check1"] == 10) ? "checked" : ""; ?> name="check1" value="10" id="check10">&ensp; Knee pain RT (M25.561) LT (M25.562)<br>
+               <input type="radio" <?php echo ($check_res["check1"] == 11) ? "checked" : ""; ?> name="check1" value="11" id="check11">&ensp; Hip pain RT (M25.551) LT (M25.552)<br>
+               <input type="radio" <?php echo ($check_res["check1"] == 12) ? "checked" : ""; ?> name="check1" value="12" id="check12">&ensp; Trochanteric bursitis  RT (M70.61) / LT (M70.62)<br>
+               <input type="radio" <?php echo ($check_res["check1"] == 13) ? "checked" : ""; ?> name="check1" value="13" id="check13">&ensp;  Annular tear Lumbar (M51.86)<br>
+               <input type="radio" <?php echo ($check_res["check1"] == 14) ? "checked" : ""; ?> name="check1" value="14" id="check14">&ensp; Drop Foot, RT (M21.371) &ensp;&ensp; 
+               <input type="radio" <?php echo ($check_res["check1"] == '14a') ? "checked" : ""; ?> name="check1" value="14a" id="check14a">&ensp; Drop Foot, LT (M21.372)<br>
+               <input type="radio" <?php echo ($check_res["check1"] == 15) ? "checked" : ""; ?> name="check1" value="15" id="check15">&ensp;  Hx of check16 Fusion (M43.26)<br>
+               <input type="radio" <?php echo ($check_res["check1"] == 16) ? "checked" : ""; ?> name="check1" value="16" id="check16">&ensp;  M51.A2 lntervertebral annulus fibrosus, large, lumbar region<br>
+               <input type="radio" <?php echo ($check_res["check1"] == 17) ? "checked" : ""; ?> name="check1" value="17" id="check17">&ensp; M51.A5 lntervertebral annulus fibrosus defect, large, lumbarsacral region
            </div>
           <br>
            <div style="border:1px solid;padding-left:10px;padding-bottom:5px;">
@@ -338,7 +453,7 @@
                Dr. Deuk	&emsp;&emsp;&emsp; <input type="text" value="<?php echo attr($check_res["sign1"]); ?>" name="sign1" id="sign1" style="width:45%;"><br>
                Dr. DeMola &emsp;&emsp;&emsp;<input type="text" value="<?php echo attr($check_res["sign2"]); ?>" name="sign2" id="sign2" style="width:45%;"><br>
                <br><br>
-               <label align='center' style="width:100%;"><input type="text" value="<?php echo attr($check_res["pat_label"]); ?>" name="pat_label" id="pat_label" style="width:85%;"><br>Patient Label</label>
+               <!-- <label align='center' style="width:100%;"><input type="text" value="<?php echo attr($check_res["pat_label"]); ?>" name="pat_label" id="pat_label" style="width:85%;"><br>Patient Label</label> -->
                </b>
            </div>
         </div>
@@ -352,4 +467,61 @@
 </div>
 </div>
 </body>
+<script>
+     $(document).ready(function(){ 
+
+
+    var count = 1;
+    var pos = $('#pos').val() ;
+                  if(pos){
+                    var mark = pos.split('|');
+                    var cnt = mark.length;
+                    while(count <cnt){
+                         var marks = mark[count-1].split(',');
+                         
+                         $("body").append(
+                         $('<div class="marker" id="'+count+'"></div>').css({
+                              position: 'absolute',
+                              top: marks[0] + 'px',
+                              left: marks[1] + 'px',
+                              width: '7px',
+                              height: '7px',
+                              'border-radius': '10px',
+                              background: '#000000'
+                         }) 
+                    ) ;
+                         count+=1;
+                    }
+                  } 
+    $('img').click(function (ev) {
+        		// alert(ev.pageX + ' , ' + ev.pageY);
+                  
+            $("body").append(    
+       
+                $('<div class="marker" id="'+count+'"></div>').css({
+                    position: 'absolute',
+                    top: ev.pageY + 'px',
+                    left: ev.pageX + 'px',
+                    width: '7px',
+                    height: '7px',
+                    'border-radius': '10px',
+                    background: '#000000'
+                })              
+          );
+          var pos = $('#pos').val() ;
+          pos = pos+ ev.pageY+','+ev.pageX+'|';
+          $('#pos').val(pos);
+
+          });
+     });
+     $(document).on('click', '.marker', function (ev) {
+               // alert(21);
+               $(this).remove();
+               var remove_val = $(this).css('top') + ',' +$(this).css('left')+'|';
+               remove_val = remove_val.replaceAll('px','');
+               var pos = $('#pos').val();
+               $('#pos').val($('#pos').val().replace(remove_val, ""));
+
+     });
+</script>
 </html>

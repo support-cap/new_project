@@ -51,23 +51,28 @@ $ap2 = $_POST['ap2'];
 $ap3 = $_POST['ap3'];
 $ap4 = $_POST['ap4'];
 $ap5 = $_POST['ap5'];
-$check1 = $_POST['check1']?1:0;
-$check2 = $_POST['check2']?1:0;
-$check3 = $_POST['check3']?1:0;
-$check4 = $_POST['check4']?1:0;
-$check5 = $_POST['check5']?1:0;
-$check6 = $_POST['check6']?1:0;
-$check7 = $_POST['check7']?1:0;
-$check8 = $_POST['check8']?1:0;
-$check9 = $_POST['check9']?1:0;
-$check10 = $_POST['check10']?1:0;
-$check11 = $_POST['check11']?1:0;
-$check12 = $_POST['check12']?1:0;
-$check13 = $_POST['check13']?1:0;
-$check14 = $_POST['check14']?1:0;
-$check15 = $_POST['check15']?1:0;
-$check16 = $_POST['check16']?1:0;
-$check17 = $_POST['check17']?1:0;
+$check1 = $_POST['check1'];
+$check2 = $_POST['check2'];
+$check3 = $_POST['check3'];
+$check4 = $_POST['check4'];
+$check5 = $_POST['check5'];
+$check6 = $_POST['check6'];
+$check7 = $_POST['check7'];
+$check8 = $_POST['check8'];
+$check9 = $_POST['check9'];
+$check10 = $_POST['check10'];
+$check11 = $_POST['check11'];
+$check12 = $_POST['check12'];
+$check13 = $_POST['check13'];
+$check14 = $_POST['check14'];
+$check15 = $_POST['check15'];
+$check16 = $_POST['check16'];
+$check17 = $_POST['check17'];
+$check18 = $_POST['check18'];
+$check19 = $_POST['check19'];
+$check20 = $_POST['check20'];
+$check21 = $_POST['check21'];
+$check22 = $_POST['check22'];
 $sign1 = $_POST['sign1'];
 $sign2 = $_POST['sign2'];
 $pat_label = $_POST['pat_label'];
@@ -101,19 +106,20 @@ $Ankle_left2= $_POST['Ankle_left2'];
 $hip_check= $_POST['hip_check']?1:0;
 $knee_check= $_POST['knee_check']?1:0;
 $shoulder_check= $_POST['shoulder_check']?1:0;
+$pos= $_POST['pos'];
 
 
-$sets = "pid =?,enc=?,dos =?,room_no =?,ins_num =?,ma_ins =?,last_visit =?,cc =?,hx =?,Worst =?,Average =?,Best =?,bp1 =?,bp2 =?,hrs =?,o2 =?,lbp =?,lep =?,right1 =?,right2 =?,right3 =?,right4 =?,right5 =?,left1 =?,left2 =?,left3 =?,left4 =?,left5 =?,right_s1 =?,right_s2 =?,right_s3 =?,right_s4 =?,right_s5 =?,left_s1 =?,left_s2 =?,left_s3 =?,left_s4 =?,left_s5 =?,ap1 =?,ap2 =?,ap3 =?,ap4 =?,ap5 =?,check1 =?,check2 =?,check3 =?,check4 =?,check5 =?,check6 =?,check7 =?,check8 =?,check9 =?,check10 =?,check11 =?,check12 =?,check13 =?,check14 =?,check15 =?,check16 =?,check17 =?,sign1 =?,sign2 =?,pat_label =?,normal_gail =?,antalgic_gail =?,normal_hamstring =?,contracture_hamstring =?,normal_ischial =?,tend_ischial =?,normal_itb =?,tend_itb =?,normal_leg =?,positive_leg =?,normal_piriformise =?,tend_piriformise =?,normal_pulse =?,tend_pulse =?,normal_troch =?,tend_troch =?,normal_sl =?,positive_sl =?,normal_facet =?,positive_facet =?,normal_muscle =?,positive_muscle =?,Patella_right1 =?,Patella_right2 =?,Ankle_left1 =?,Ankle_left2 =?,hip_check =?,knee_check =?,shoulder_check=?";
+$sets = "pid =?,enc=?,dos =?,room_no =?,ins_num =?,ma_ins =?,last_visit =?,cc =?,hx =?,Worst =?,Average =?,Best =?,bp1 =?,bp2 =?,hrs =?,o2 =?,lbp =?,lep =?,right1 =?,right2 =?,right3 =?,right4 =?,right5 =?,left1 =?,left2 =?,left3 =?,left4 =?,left5 =?,right_s1 =?,right_s2 =?,right_s3 =?,right_s4 =?,right_s5 =?,left_s1 =?,left_s2 =?,left_s3 =?,left_s4 =?,left_s5 =?,ap1 =?,ap2 =?,ap3 =?,ap4 =?,ap5 =?,check1 =?,check2 =?,check3 =?,check4 =?,check5 =?,check6 =?,check7 =?,check8 =?,check9 =?,check10 =?,check11 =?,check12 =?,check13 =?,check14 =?,  check15 =?,check16 =?,check17 =?,check18 =?,check19 =?,check20 =?,check21 =?,check22 =?,sign1 =?,sign2 =?,pat_label =?,normal_gail =?,antalgic_gail =?,normal_hamstring =?,contracture_hamstring =?,normal_ischial =?,tend_ischial =?,normal_itb =?,tend_itb =?,normal_leg =?,positive_leg =?,normal_piriformise =?,tend_piriformise =?,normal_pulse =?,tend_pulse =?,normal_troch =?,tend_troch =?,normal_sl =?,positive_sl =?,normal_facet =?,positive_facet =?,normal_muscle =?,positive_muscle =?,Patella_right1 =?,Patella_right2 =?,Ankle_left1 =?,Ankle_left2 =?,hip_check =?,knee_check =?,shoulder_check=?,pos=?";
 
 
-$value = [$pid,$encounter,$dos,$room_no,$ins_num,$ma_ins,$last_visit,$cc,$hx,$Worst,$Average,$Best,$bp1,$bp2,$hrs,$o2,$lbp,$lep,$right1,$right2,$right3,$right4,$right5,$left1, $left2, $left3, $left4, $left5, $right_s1, $right_s2, $right_s3, $right_s4, $right_s5, $left_s1, $left_s2, $left_s3, $left_s4, $left_s5, $ap1,$ap2,$ap3,$ap4,$ap5, $check1, $check2, $check3, $check4, $check5, $check6, $check7, $check8, $check9, $check10, $check11, $check12, $check13, $check14, $check15, $check16, $check17, $sign1, $sign2, $pat_label,$normal_gail,$antalgic_gail,$normal_hamstring,$contracture_hamstring,$normal_ischial,$tend_ischial,$normal_itb,$tend_itb,$normal_leg,$positive_leg,$normal_piriformise,$tend_piriformise,$normal_pulse,$tend_pulse,$normal_troch,$tend_troch,$normal_sl,$positive_sl,$normal_facet,$positive_facet,$normal_muscle,$positive_muscle,$Patella_right1,$Patella_right2,$Ankle_left1,$Ankle_left2,$hip_check,$knee_check,$shoulder_check];
+$value = [$pid,$encounter,$dos,$room_no,$ins_num,$ma_ins,$last_visit,$cc,$hx,$Worst,$Average,$Best,$bp1,$bp2,$hrs,$o2,$lbp,$lep,$right1,$right2,$right3,$right4,$right5,$left1, $left2, $left3, $left4, $left5, $right_s1, $right_s2, $right_s3, $right_s4, $right_s5, $left_s1, $left_s2, $left_s3, $left_s4, $left_s5, $ap1,$ap2,$ap3,$ap4,$ap5, $check1, $check2, $check3, $check4, $check5, $check6, $check7, $check8, $check9, $check10, $check11, $check12, $check13, $check14,  $check15, $check16, $check17, $check18, $check19, $check20, $check21, $check22, $sign1, $sign2, $pat_label,$normal_gail,$antalgic_gail,$normal_hamstring,$contracture_hamstring,$normal_ischial,$tend_ischial,$normal_itb,$tend_itb,$normal_leg,$positive_leg,$normal_piriformise,$tend_piriformise,$normal_pulse,$tend_pulse,$normal_troch,$tend_troch,$normal_sl,$positive_sl,$normal_facet,$positive_facet,$normal_muscle,$positive_muscle,$Patella_right1,$Patella_right2,$Ankle_left1,$Ankle_left2,$hip_check,$knee_check,$shoulder_check,$pos];
 
 
 if ($id && $id != 0) {
     sqlStatement("UPDATE `form_deuk_spine` SET  ".$sets ."  WHERE id =$id", $value);
 }else 
 {
-     $newid = sqlInsert("INSERT INTO `form_deuk_spine`( `pid`,`enc`,`lumbar`, `dos`, `room_no`, `ins_num`, `ma_ins`, `last_visit`, `cc`, `hx`, `Worst`, `Average`, `Best`, `bp1`, `bp2`, `hrs`, `o2`, `lbp`, `lep`, `right1`, `right2`, `right3`, `right4`, `right5`, `left1`, `left2`, `left3`, `left4`, `left5`, `right_s1`, `right_s2`, `right_s3`, `right_s4`, `right_s5`, `left_s1`, `left_s2`, `left_s3`, `left_s4`, `left_s5`, `ap1`,`ap2`, `ap3`,`ap4`,`ap5`, `check1`, `check2`, `check3`, `check4`, `check5`, `check6`, `check7`, `check8`, `check9`, `check10`, `check11`, `check12`, `check13`, `check14`, `check15`, `check16`, `check17`, `sign1`, `sign2`, `pat_label`,`normal_gail`,`antalgic_gail`,`normal_hamstring`,`contracture_hamstring`,`normal_ischial`,`tend_ischial`,`normal_itb`,`tend_itb`,`normal_leg`,`positive_leg`,`normal_piriformise`,`tend_piriformise`,`normal_pulse`,`tend_pulse`,`normal_troch`,`tend_troch`,`normal_sl`,`positive_sl`,`normal_facet`,`positive_facet`,`normal_muscle`,`positive_muscle`,`Patella_right1`,`Patella_right2`,`Ankle_left1`,`Ankle_left2`,`hip_check`,`knee_check`,`shoulder_check`) VALUES ('$pid','$encounter','$lumbar','$dos','$room_no','$ins_num','$ma_ins','$last_visit','$cc','$hx','$Worst','$Average','$Best','$bp1','$bp2','$hrs','$o2','$lbp','$lep','$right1','$right2','$right3','$right4','$right5','$left1', '$left2', '$left3', '$left4', '$left5', '$right_s1', '$right_s2', '$right_s3', '$right_s4', '$right_s5', '$left_s1', '$left_s2', '$left_s3', '$left_s4', '$left_s5', '$ap1','$ap2','$ap3','$ap4', '$ap5', '$check1', '$check2', '$check3', '$check4', '$check5', '$check6', '$check7', '$check8', '$check9', '$check10', '$check11', '$check12', '$check13', '$check14', '$check15', '$check16', '$check17', '$sign1', '$sign2', '$pat_label','$normal_gail','$antalgic_gail','$normal_hamstring','$contracture_hamstring','$normal_ischial','$tend_ischial','$normal_itb','$tend_itb','$normal_leg','$positive_leg','$normal_piriformise','$tend_piriformise','$normal_pulse','$tend_pulse','$normal_troch','$tend_troch','$normal_sl','$positive_sl','$normal_facet','$positive_facet','$normal_muscle','$positive_muscle','$Patella_right1','$Patella_right2','$Ankle_left1','$Ankle_left2','$hip_check','$knee_check','$shoulder_check')");
+     $newid = sqlInsert("INSERT INTO `form_deuk_spine`( `pid`,`enc`,`lumbar`, `dos`, `room_no`, `ins_num`, `ma_ins`, `last_visit`, `cc`, `hx`, `Worst`, `Average`, `Best`, `bp1`, `bp2`, `hrs`, `o2`, `lbp`, `lep`, `right1`, `right2`, `right3`, `right4`, `right5`, `left1`, `left2`, `left3`, `left4`, `left5`, `right_s1`, `right_s2`, `right_s3`, `right_s4`, `right_s5`, `left_s1`, `left_s2`, `left_s3`, `left_s4`, `left_s5`, `ap1`,`ap2`, `ap3`,`ap4`,`ap5`, `check1`, `check2`, `check3`, `check4`, `check5`, `check6`, `check7`, `check8`, `check9`, `check10`, `check11`, `check12`, `check13`, `check14`, `check15`, `check16`, `check17`,`check18`, `check19`, `check20`, `check21`, `check22`, `sign1`, `sign2`, `pat_label`,`normal_gail`,`antalgic_gail`,`normal_hamstring`,`contracture_hamstring`,`normal_ischial`,`tend_ischial`,`normal_itb`,`tend_itb`,`normal_leg`,`positive_leg`,`normal_piriformise`,`tend_piriformise`,`normal_pulse`,`tend_pulse`,`normal_troch`,`tend_troch`,`normal_sl`,`positive_sl`,`normal_facet`,`positive_facet`,`normal_muscle`,`positive_muscle`,`Patella_right1`,`Patella_right2`,`Ankle_left1`,`Ankle_left2`,`hip_check`,`knee_check`,`shoulder_check`,`pos`) VALUES ('$pid','$encounter','$lumbar','$dos','$room_no','$ins_num','$ma_ins','$last_visit','$cc','$hx','$Worst','$Average','$Best','$bp1','$bp2','$hrs','$o2','$lbp','$lep','$right1','$right2','$right3','$right4','$right5','$left1', '$left2', '$left3', '$left4', '$left5', '$right_s1', '$right_s2', '$right_s3', '$right_s4', '$right_s5', '$left_s1', '$left_s2', '$left_s3', '$left_s4', '$left_s5', '$ap1','$ap2','$ap3','$ap4', '$ap5', '$check1', '$check2', '$check3', '$check4', '$check5', '$check6', '$check7', '$check8', '$check9', '$check10', '$check11', '$check12', '$check13', '$check14', '$check15', '$check16', '$check17', '$check18', '$check19', '$check20', '$check21', '$check22','$sign1', '$sign2', '$pat_label','$normal_gail','$antalgic_gail','$normal_hamstring','$contracture_hamstring','$normal_ischial','$tend_ischial','$normal_itb','$tend_itb','$normal_leg','$positive_leg','$normal_piriformise','$tend_piriformise','$normal_pulse','$tend_pulse','$normal_troch','$tend_troch','$normal_sl','$positive_sl','$normal_facet','$positive_facet','$normal_muscle','$positive_muscle','$Patella_right1','$Patella_right2','$Ankle_left1','$Ankle_left2','$hip_check','$knee_check','$shoulder_check','$pos')");
      
     addForm($encounter, "Deuk Spine", $newid, "form_deuk_spine",  $_SESSION["pid"], $userauthorized);
 }
