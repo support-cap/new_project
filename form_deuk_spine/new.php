@@ -87,12 +87,16 @@
         <h4 align="center" style="width:100%;">Deuk Spine Institute Consultation</h4>
         <h6 align="center"> Lumbar</h6>
         <div class="row">
-          <div class="col-4">
+               <div class="col-5" style="font-size:14px">
                <input type="hidden" name="pos" id="pos" value="<?php echo attr($check_res["pos"]); ?>" >
-                 <label style="border: 1px solid;padding:2px"> pain: X Numbness :O Weekness : /pins & needles: * </label>      
+                    <label style="border: 1px solid;padding:2px"> pain: 
+                    <input type="radio" name="pain" class="pain" id="pain1" value = "X"> &ensp; X  Numbness &emsp;
+                    <input type="radio" name="pain" class="pain" id="pain2" value = "O"> &ensp; O Weekness&emsp;
+                    <input type="radio" name="pain" class="pain" id="pain3" value = "*"> &ensp; * pins & needles
+                    </label>     
           </div>
           <div class="col-3">DOS <input type="date" value="<?php echo attr($check_res["dos"]); ?>" name="dos" id="dos"></div>
-          <div class="col-5">
+          <div class="col-4">
                Room #:  <input type="text" value="<?php echo attr($check_res["room_no"]); ?>" name="room_no" id="room_no"><br>
                Insurance : <input type="text" value="<?php echo attr($check_res["ins_num"]); ?>" name="ins_num" id="ins_num"><br>
                MA  Initials : <input type="text" value="<?php echo attr($check_res["ma_ins"]); ?>" name="ma_ins" id="ma_ins">     
@@ -254,15 +258,15 @@
           </select><br>
           <div class="title">Sl joint:</div>
           <input type="checkbox" <?php echo ($check_res["normal_sl"] == 1) ? "checked" : ""; ?> name="normal_sl" id="normal_sl" class="common_class">normal&emsp;&emsp;&emsp;&emsp;
-          <input type="checkbox" <?php echo ($check_res["positive_sl"] == 1) ? "checked" : ""; ?> name="positive_sl" class="common_class" id="positive_sl" class="common_class">positive <br>
-          <div class="title">Facet loading:</div>
-          <input type="checkbox" <?php echo ($check_res["normal_facet"] == 1) ? "checked" : ""; ?> name="normal_facet" id="normal_facet" class="common_class">normal&emsp;&emsp;&emsp;&emsp;
-          <input type="checkbox" <?php echo ($check_res["positive_facet"] == 1) ? "checked" : ""; ?> name="positive_facet" class="common_class" id="positive_facet" class="common_class">positive&emsp;&emsp;&emsp;&emsp;  
+          <input type="checkbox" <?php echo ($check_res["positive_sl"] == 1) ? "checked" : ""; ?> name="positive_sl" class="common_class" id="positive_sl" class="common_class">tenderness &emsp;&emsp;&emsp;  
           <select name="check9" id="check9" value = '<?php echo attr($check_res["check9"])? $check_res["check9"] : ""; ?>' >
                <option value="L" <?php echo attr($check_res["check9"] == 'L') ? "selected" : ""; ?> >L</option>
                <option value="R" <?php echo attr($check_res["check9"] == 'R') ? "selected" : ""; ?> >R</option>
                <option value="B" <?php echo attr($check_res["check9"] == 'B') ? "selected" : ""; ?> >B</option>
           </select><br>
+          <div class="title">Facet loading:</div>
+          <input type="checkbox" <?php echo ($check_res["normal_facet"] == 1) ? "checked" : ""; ?> name="normal_facet" id="normal_facet" class="common_class">normal&emsp;&emsp;&emsp;&emsp;
+          <input type="checkbox" <?php echo ($check_res["positive_facet"] == 1) ? "checked" : ""; ?> name="positive_facet" class="common_class" id="positive_facet" class="common_class">positive<br>
           <div class="title">Muscle Spasms:</div>
           <input type="checkbox" <?php echo ($check_res["normal_muscle"] == 1) ? "checked" : ""; ?> name="normal_muscle" id="normal_muscle" class="common_class">normal&emsp;&emsp;&emsp;&emsp;
           <input type="checkbox" <?php echo ($check_res["positive_muscle"] == 1) ? "checked" : ""; ?> name="positive_muscle" class="common_class" id="positive_muscle" class="common_class">positive &emsp;&emsp;&emsp;&emsp; 
@@ -471,53 +475,52 @@
      $(document).ready(function(){ 
 
 
-    var count = 1;
-    var pos = $('#pos').val() ;
-                  if(pos){
+               var count = 1;
+               var pos = $('#pos').val() ;
+               if(pos){
                     var mark = pos.split('|');
                     var cnt = mark.length;
                     while(count <cnt){
                          var marks = mark[count-1].split(',');
                          
                          $("body").append(
-                         $('<div class="marker" id="'+count+'"></div>').css({
+                         $('<div class="marker" id="'+count+'" style="cursor:pointer;"></div>').text(marks[2]).css({
                               position: 'absolute',
                               top: marks[0] + 'px',
                               left: marks[1] + 'px',
-                              width: '7px',
-                              height: '7px',
-                              'border-radius': '10px',
-                              background: '#000000'
+                              'font-weight': 'bold',
+                              'font-size':'15px',
+                              color:'red'
                          }) 
                     ) ;
                          count+=1;
                     }
-                  } 
+               } 
     $('img').click(function (ev) {
-        		// alert(ev.pageX + ' , ' + ev.pageY);
-                  
-            $("body").append(    
+       if($('.pain').is(':checked')){
+                   var pain = $('.pain:checked').val();
+          $("body").append(    
        
-                $('<div class="marker" id="'+count+'"></div>').css({
+                $('<div class="marker" id="'+count+'" style="cursor:pointer;"></div>').text(pain).css({
                     position: 'absolute',
                     top: ev.pageY + 'px',
                     left: ev.pageX + 'px',
-                    width: '7px',
-                    height: '7px',
-                    'border-radius': '10px',
-                    background: '#000000'
+                    'font-weight': 'bold',
+                    'font-size':'15px',
+                     color:'red'
                 })              
           );
           var pos = $('#pos').val() ;
-          pos = pos+ ev.pageY+','+ev.pageX+'|';
+          pos = pos+ ev.pageY+','+ev.pageX+','+pain+'|';
           $('#pos').val(pos);
-
-          });
+       } else{
+          alert('Please choose one of them above! ')
+       }
+     });
      });
      $(document).on('click', '.marker', function (ev) {
-               // alert(21);
                $(this).remove();
-               var remove_val = $(this).css('top') + ',' +$(this).css('left')+'|';
+               var remove_val = $(this).css('top') + ',' +$(this).css('left')+ ',' +$(this).text()+'|';
                remove_val = remove_val.replaceAll('px','');
                var pos = $('#pos').val();
                $('#pos').val($('#pos').val().replace(remove_val, ""));
